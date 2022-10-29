@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 const List = () => {
@@ -5,74 +6,76 @@ const List = () => {
     <div className="menu-container container col-9 ">
       <ul className="list-menu row justify-content-around text-center">
         <li>
-          <a href="/">
+          <Link href="/">
             <span>PROPIEDADES</span>
-          </a>
+          </Link>
           <ul>
             <li>
-              <a href="/">Nuevas Construcciones</a>
+            <Link href="/">
+            Nuevas Construcciones
+            </Link>
             </li>
             <li>
-              <a href="/">Usados</a>
+              <Link href="/">Usados</Link>
             </li>
           </ul>
         </li>
         <li>
-          <a href="/">
+          <Link href="/">
             <span>FINANCIAMIENTO</span>
-          </a>
+          </Link>
           <ul>
             <li>
-              <a href="/">Financiamiento para extranjeros</a>
+              <Link href="/">Financiamiento para extranjeros</Link>
             </li>
             <li>
-              <a href="/">Financiamiento para residentes</a>
+              <Link href="/">Financiamiento para residentes</Link>
             </li>
             <li>
-              <a href="/">Calculadora de Hipotecas</a>
+              <Link href="/">Calculadora de Hipotecas</Link>
             </li>
           </ul>
         </li>
         <li>
-          <a href="/">
+          <Link href="/">
             <span>SERVICIOS</span>
-          </a>
+          </Link>
           <ul>
             <li>
-              <a href="/">Asesoría Contable y Legal</a>
+              <Link href="/">Asesoría Contable y Legal</Link>
             </li>
             <li>
-              <a href="/">Prestamos Hipotecarios para extranjeros</a>
+              <Link href="/">Prestamos Hipotecarios para extranjeros</Link>
             </li>
           </ul>
         </li>
         <li>
-          <a href="/">
+          <Link href="/">
             <span>ADMINISTRACIÓN DE PROPIEDADES</span>
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="/">
+          <Link href="/">
             <span>RENTA EN DÓLARES</span>
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="/">
+          <Link href="/">
             <span>NOSOTROS</span>
-          </a>
+          </Link>
           <ul>
             <li>
-              <a href="/">Quienes somos</a>
+              <Link href="/">Quienes somos</Link>
             </li>
             <li>
-              <a href="/">Blog</a>
+              <Link href="/">Blog</Link>
             </li>
           </ul>
         </li>
         <li>
-          <a href="/">
+          <Link href="/">
             <span>CONTÁCTENOS</span>
-          </a>
+          </Link>
         </li>
       </ul>
     </div>
