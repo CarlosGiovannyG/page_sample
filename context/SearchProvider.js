@@ -1,14 +1,20 @@
 import { useRouter } from "next/router";
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 export const SearchContext = createContext();
 
 const SearchProvider = ({ children }) => {
   const router = useRouter();
+  const [isLocation, setIsLocation] = useState("");
   const [location, setLocation] = useState("");
   const [typeSearch, setTypeSearch] = useState("Usados");
   const [categorySearch, setCategorySearch] = useState("Ciudad");
   const [citySearch, setCitySearch] = useState("Miami");
+  const { pathname } = router;
+
+  useEffect(() => {
+    setIsLocation(pathname);
+  }, [pathname]);
 
   const handleSubmit = (data) => {
     setCitySearch(data);
@@ -38,6 +44,7 @@ const SearchProvider = ({ children }) => {
     handleClick,
     submitHandler,
     handleSubmit,
+    isLocation,
   };
 
   return (

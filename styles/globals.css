@@ -115,7 +115,6 @@ ol {
 }
 /* Componente search */
 .search-home {
-  position: absolute;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -214,20 +213,111 @@ ol {
 
 .banner {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   word-wrap: break-word;
   width: 97%;
-  min-height: 385px;
-  border-radius: 10px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
+  min-height: 50vh;
+  background-image: url("../public/images/banner.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.8;
+  border-radius: 15px;
 }
 
-.img-banner {
-  width: 100%;
+.banner-title {
+  color: #fff;
+  font-size: 50px;
+  line-height: 1;
+  font-family: serif;
+  text-transform: capitalize;
+  margin: 0 auto 20px;
+  font-weight: 200;
+  max-width: 30rem;
+}
+
+.cards {
+  max-width: 95%;
+  min-width: 90%;
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 1rem auto;
   border-radius: 15px;
-  opacity: 0.8;
+  padding: 1rem 1rem;
+}
+
+.container-cards-title {
+  width: 90%;
+  margin: 0.5rem auto;
+  color: #121212;
+  font-size: 50px;
+  font-family: serif;
+  text-transform: capitalize;
+  font-weight: 400;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.container-cards {
+  position: relative;
+  display: grid;
+  width: 94%;
+  gap: 1rem;
+  grid-auto-rows: 20rem;
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+  align-items: flex-end;
+  justify-content: center;
+  margin: 0 auto;
+  padding-bottom: 10rem;
+  z-index: 5;
+  padding: 1rem;
+}
+
+.container-card {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  transition: transform 0.5s, box-shadow 0.5s;
+}
+
+.container-card:hover {
+  transform: translate(0px, -10px);
+  transition: transform 0.5s, box-shadow 0.5s;
+  box-shadow: 0px 3px rgba(34, 34, 34, 0.2), -2px 0px rgba(34, 34, 34, 0.2);
+  cursor: pointer;
+}
+
+.card-link {
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card-image {
+  margin: 0 auto;
+  width: 22rem;
+  height: 15rem;
+  filter: brightness(70%);
+}
+.card-title {
+  width: 70%;
+  height: 2rem;
+  margin: 0.4rem auto;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  color: black;
+  border-radius: 0.7rem;
+  background-color: rgba(209, 207, 207, 0.562);
 }
 
 /*
