@@ -4,6 +4,7 @@ import Header from "./Header";
 import {ToastContainer} from 'react-toastify'
 import "react-toastify/dist/ReactToastify.css";
 import Footer from "./Footer";
+import List from "./List";
 
 const Layout = ({children, title = "Reserve el mejor hotel para sus vacaciones" }) => {
   return (
@@ -14,7 +15,9 @@ const Layout = ({children, title = "Reserve el mejor hotel para sus vacaciones" 
         <meta name="viewport" content="initial-scale=1.0,width=device-width" />
         <link rel="icon" href="/favicon/favicon.ico" />
       </Head>
-      <Header />
+      <Header>
+        <List/>
+      </Header>
       <ToastContainer position="bottom-right" />
       {children}
       <Footer />
