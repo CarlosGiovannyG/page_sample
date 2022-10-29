@@ -34,6 +34,16 @@ nav {
   box-shadow: 0 4px 6px -6px #222;
 }
 
+/* pagina no encontrada */
+.container_404 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 68vh;
+}
+
 /* pagina de espera */
 
 .center-loader {
@@ -103,6 +113,123 @@ ol {
   align-items: flex-end;
   background-color: #fff8f8;
 }
+/* Componente search */
+.search-home {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0.1rem 0.5rem;
+}
+.container-buttons {
+  width: max-content;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 1rem;
+  padding-inline: 1.5rem;
+  border-radius: 0.8rem;
+  background-color: rgba(255, 255, 255, 0.295);
+}
+
+.button-search {
+  padding: 0.2rem 1.5rem;
+  border-radius: 0.4rem;
+  border: 1px solid rgb(120, 121, 121);
+  background: rgba(230, 228, 228, 0.26);
+}
+
+.button-search:hover {
+  background-color: rgba(151, 144, 144, 0.438);
+}
+.button-search-active {
+  padding: 0.2rem 1.5rem;
+  border-radius: 0.4rem;
+  border: 1px solid rgb(120, 121, 121);
+  background-color: white;
+}
+
+.span-search {
+  font-size: 18px;
+  font-weight: 400;
+  color: rgb(90, 88, 88);
+}
+.span-search:hover {
+  color: black;
+}
+
+.formSearch {
+  display: flex;
+  padding: 0.5rem 1.5rem;
+  align-items: center;
+  justify-content: center;
+}
+.container-select {
+  width: 9rem;
+  height: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff8f8;
+  margin-right: 0.5rem;
+  border: 1px solid rgb(120, 121, 121);
+  border-radius: 10px;
+  padding-right: 0.8rem;
+  padding-left: 0.5rem;
+}
+.container-select label {
+  color: black;
+  font-size: 16px;
+  font-weight: 600;
+}
+.selectSearch {
+  display: flex;
+  text-align: left;
+  border: none;
+}
+.inputSearch {
+  width: 100%;
+  height: 4rem;
+  font-size: 18px;
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+  padding: 0.5rem 0.9rem;
+  border: 1px solid rgb(120, 121, 121);
+}
+.inputSearch:hover {
+  border: 1px solid rgb(175, 12, 47);
+}
+
+.btnSearch {
+  border: none;
+  background-color: red;
+  height: 4rem;
+  width: 5rem;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  word-wrap: break-word;
+  width: 97%;
+  min-height: 385px;
+  border-radius: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.img-banner {
+  width: 100%;
+  border-radius: 15px;
+  opacity: 0.8;
+}
+
 /*
 
 .lds-ellipsis div {
@@ -524,14 +651,7 @@ input::placeholder {
   color: grey;
 }
 
-.container_404 {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  min-height: 68vh;
-}
+
 
 .title_404 {
   color: #4c4849;

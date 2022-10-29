@@ -6,7 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 import Footer from "./Footer";
 import List from "./List";
 
-const Layout = ({children, title = "Reserve el mejor hotel para sus vacaciones" }) => {
+const Layout = ({children, title = "Page Example" }) => {
   return (
     <div>
       <Head>

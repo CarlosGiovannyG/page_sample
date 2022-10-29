@@ -1,27 +1,77 @@
 import React, { useState } from "react";
 import { useRouter } from "next/router";
+import { FaSearch } from "react-icons/fa";
+import { useSearch } from "../context";
 
-const Search = () => {
-  const [location, setLocation] = useState("");
-  const [guests, setGuests] = useState("");
-  const [category, setCategory] = useState("");
-
-  const router = useRouter();
-
-  const submitHandler = (e) => {
-    e.preventDefault();
-
-    if (location.trim()) {
-      router.push(
-        `/?location=${location}&guests=${guests}&category=${category}`
-      );
-    } else {
-      router.push("/");
-    }
-  };
-
+const Search = ({ className, position }) => {
+  const {
+    typeSearch,
+    setCategorySearch,
+    categorySearch,
+    citySearch,
+    submitHandler,
+    handleClick,
+    handleSubmit,
+  } = useSearch();
   return (
-    <div className="container container-fluid">
+    <div className={`${className} container container-fluid col-8`}>
+      {position === "home" && (
+        <div className="container-buttons">
+          {["Usados", "Nuevos", "Rentar"].map((type) => (
+            <button
+              key={type}
+              onClick={() => handleClick(type)}
+              className={
+                typeSearch === type ? "button-search-active" : "button-search"
+              }
+            >
+              <span className="span-search">{type}</span>
+            </button>
+          ))}
+        </div>
+      )}
+      <form className="formSearch col-12">
+        <div className="container-select">
+          <label htmlFor="select_search">Buscar por: </label>
+          <select
+            className="selectSearch"
+            id="select_search"
+            value={categorySearch}
+            onChange={(e) => setCategorySearch(e.target.value)}
+          >
+            {["Ciudad", "Código Postal", "Condado"].map((category) => (
+              <option key={category} value={category}>
+                {category}
+              </option>
+            ))}
+          </select>
+        </div>
+        <input
+          className="inputSearch"
+          type="text"
+          name="search"
+          onChange={(e) => handleSubmit(e.target.value)}
+          value={citySearch}
+          placeholder="Selecciona una opción y has tu búsqueda"
+        />
+        <button
+          onClick={submitHandler}
+          type="submit"
+          className="btnSearch text-white"
+        >
+          <FaSearch size={25} />
+        </button>
+      </form>
+      <div className="row wrapper"></div>
+    </div>
+  );
+};
+
+export default Search;
+
+/*
+
+ <div className="container container-fluid">
       <div className="row wrapper">
         <div className="col-10 col-lg-5">
           <form className="shadow-lg" onSubmit={submitHandler}>
@@ -77,7 +127,8 @@ const Search = () => {
         </div>
       </div>
     </div>
-  );
-};
 
-export default Search;
+
+
+
+*/
