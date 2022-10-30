@@ -1,12 +1,17 @@
 import Head from "next/head";
 import React from "react";
 import Header from "./Header";
-import {ToastContainer} from 'react-toastify'
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Footer from "./Footer";
 import List from "./List";
+import { useSearch } from "../context";
+import Breadcrumbs from "./Breadcrumbs ";
 
-const Layout = ({children, title = "Page Example" }) => {
+const Layout = ({ children, title = "Page Example" }) => {
+  const { isLocation } = useSearch();
+
+ 
   return (
     <div>
       <Head>
@@ -16,8 +21,11 @@ const Layout = ({children, title = "Page Example" }) => {
         <link rel="icon" href="/favicon/favicon.ico" />
       </Head>
       <Header>
-        <List/>
+        <List />
       </Header>
+      {isLocation !== '/' &&
+      <Breadcrumbs />
+      }
       <ToastContainer position="bottom-right" />
       {children}
       <Footer />

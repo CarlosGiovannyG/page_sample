@@ -16,6 +16,8 @@ const SearchProvider = ({ children }) => {
     setIsLocation(pathname);
   }, [pathname]);
 
+  console.log({ router });
+
   const handleSubmit = (data) => {
     setCitySearch(data);
   };
