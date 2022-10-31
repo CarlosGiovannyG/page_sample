@@ -22,7 +22,6 @@ const json_data.property.type={
 */
 
 
-
 //* urlpath  url
 
 //* dirección full name

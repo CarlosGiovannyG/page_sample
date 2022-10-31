@@ -1,18 +1,18 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { Apartments, Layout } from "../../../components";
-import { apartmentPropertiesVent } from "../../../redux/actions";
+import { apartmentPropertiesRent } from "../../../redux/actions";
 import { wrapper } from "../../../redux/store";
 
-const Vender = () => {
+const Rentar = () => {
   const { loading, data } = useSelector(
-    (state) => state.apartmentPropertiesVent
+    (state) => state.apartmentPropertiesRent
   );
 
   console.log(data);
   return (
     <Layout>
-      <Apartments title='Apartamentos Venta'  data={data} loading={loading} />
+      <Apartments data={data} loading={loading} />
     </Layout>
   );
 };
@@ -20,8 +20,8 @@ const Vender = () => {
 export const getServerSideProps = wrapper.getServerSideProps(
   (store) =>
     async ({ req }) => {
-      await store.dispatch(apartmentPropertiesVent(req));
+      await store.dispatch(apartmentPropertiesRent(req));
     }
 );
 
-export default Vender;
+export default Rentar;

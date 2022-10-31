@@ -4,7 +4,7 @@ import Cards from "./Cards";
 import Loader from "./Loader";
 import Search from "./Search";
 
-const Houses = ({ loading, data, title }) => {
+const Apartments = ({ loading, data, title }) => {
   return (
     <>
       <Banner>
@@ -15,4 +15,4 @@ const Houses = ({ loading, data, title }) => {
   );
 };
 
-export default Houses;
+export default Apartments;

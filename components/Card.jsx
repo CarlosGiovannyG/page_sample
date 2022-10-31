@@ -1,12 +1,15 @@
 import Link from "next/link";
+import { useRouter } from "next/router";
 import React from "react";
-import { useSearch } from "../context";
 
 const Card = ({ dato }) => {
-  const { isLocation } = useSearch();
+  const router = useRouter();
+
+  console.log("Card", router);
+
   return (
     <>
-      { dato.json_data.photos.length ? (
+      {dato.json_data.photos.length ? (
         <div className="container-card">
           <Link className="card-link" href={"/preconstruccion"}>
             <img

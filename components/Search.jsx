@@ -13,169 +13,78 @@ const Search = ({ className, position }) => {
     motive,
     setMotive,
     typeProperty,
-    setTypeProperty,
+    motiveHandler,
+    typePropertyHandler,
     submitHandler,
+    typeSearchHandler
   } = useSearch();
   return (
     <div className={`${className}`}>
-      {position === "home" ? (
-        <>
-          <div className="container-buttons">
+      <div className="container-select">
+        <div className="container-buttons">
+          <label htmlFor="room_type_field">Tipo de Inmueble</label>
+          <select
+            className="button-search"
+            id="room_type_field"
+            value={typeProperty}
+            onChange={(e) => typePropertyHandler(e.target.value)}
+          >
             {["Casas", "Apartamentos"].map((type) => (
-              <button
-                key={type}
-                onClick={() => setTypeProperty(type)}
-                className={
-                  typeProperty === type ? "button-search-active" : "button-search"
-                }
-              >
-                <span
-                  className={
-                    typeProperty === type ? "span-search-active" : "span-search"
-                  }
-                >
-                  {type}
-                </span>
-              </button>
+              <option key={type} value={type}>
+                {type}
+              </option>
             ))}
-          </div>
-          <div className="container-buttons">
-            {["Usados", "Nuevos"].map((type) => (
-              <button
-                key={type}
-                onClick={() => setTypeSearch(type)}
-                className={
-                  typeSearch === type ? "button-search-active" : "button-search"
-                }
-              >
-                <span
-                  className={
-                    typeSearch === type ? "span-search-active" : "span-search"
-                  }
-                >
-                  {type}
-                </span>
-              </button>
-            ))}
-          </div>
-          <div className="container-buttons">
-            {["Rentar", "Comprar"].map((type) => (
-              <button
-                key={type}
-                onClick={() => setMotive(type)}
-                className={
-                  motive === type ? "button-search-active" : "button-search"
-                }
-              >
-                <span
-                  className={
-                    motive === type ? "span-search-active" : "span-search"
-                  }
-                >
-                  {type}
-                </span>
-              </button>
-            ))}
-          </div>
-          <div className="container-buttons">
-            {["Ciudad", "Código Postal", "Condado"].map((category) => (
-              <button
-                key={category}
-                onClick={() => setCategorySearch(category)}
-                className={
-                  categorySearch === category
-                    ? "button-search-two-active"
-                    : "button-search-two"
-                }
-              >
-                <span
-                  className={
-                    categorySearch === category
-                      ? "span-search-active"
-                      : "span-search"
-                  }
-                >
-                  {category}
-                </span>
-              </button>
-            ))}
-          </div>
-        </>
-      ) : (
-        <div className="search-title">
-          <span>Busca por ciudad</span>
+          </select>
         </div>
-      )}
-      {position === "casas" ? (
-        <>
-          <div className="container-buttons">
-            {["Usados", "Nuevos"].map((type) => (
-              <button
-                key={type}
-                onClick={() => setTypeSearch(type)}
-                className={
-                  typeSearch === type ? "button-search-active" : "button-search"
-                }
-              >
-                <span
-                  className={
-                    typeSearch === type ? "span-search-active" : "span-search"
-                  }
-                >
-                  {type}
-                </span>
-              </button>
-            ))}
-          </div>
-          <div className="container-buttons">
+        <div className="container-buttons">
+          <label htmlFor="room_type_field">Transacción</label>
+          <select
+            className="button-search"
+            id="room_type_field"
+            value={motive}
+            onChange={(e) => motiveHandler(e.target.value)}
+          >
             {["Rentar", "Comprar"].map((type) => (
-              <button
-                key={type}
-                onClick={() => setMotive(type)}
-                className={
-                  motive === type ? "button-search-active" : "button-search"
-                }
-              >
-                <span
-                  className={
-                    motive === type ? "span-search-active" : "span-search"
-                  }
-                >
-                  {type}
-                </span>
-              </button>
+              <option key={type} value={type}>
+                {type}
+              </option>
             ))}
-          </div>
-          <div className="container-buttons">
-            {["Ciudad", "Código Postal", "Condado"].map((category) => (
-              <button
-                key={category}
-                onClick={() => setCategorySearch(category)}
-                className={
-                  categorySearch === category
-                    ? "button-search-two-active"
-                    : "button-search-two"
-                }
-              >
-                <span
-                  className={
-                    categorySearch === category
-                      ? "span-search-active"
-                      : "span-search"
-                  }
-                >
-                  {category}
-                </span>
-              </button>
-            ))}
-          </div>
-        </>
-      ) : (
-        <div className="search-title">
-          <span>Busca por ciudad</span>
+          </select>
         </div>
-      )}
+      </div>
+      <div className="container-select">
+        <div className="container-buttons">
+          <label htmlFor="room_type_field">Condición</label>
+          <select
+            className="button-search"
+            id="room_type_field"
+            value={typeSearch}
+            onChange={(e) => typeSearchHandler(e.target.value)}
+          >
+            {["Usados", "Nuevos"].map((type) => (
+              <option key={type} value={type}>
+                {type}
+              </option>
+            ))}
+          </select>
+        </div>
 
+        <div className="container-buttons">
+          <label htmlFor="room_type_field">Buscar por:</label>
+          <select
+            className="button-search"
+            id="room_type_field"
+            value={motive}
+            onChange={(e) => setMotive(e.target.value)}
+          >
+            {["Ciudad", "Código Postal", "Condado"].map((type) => (
+              <option key={type} value={type}>
+                {type}
+              </option>
+            ))}
+          </select>
+        </div>
+      </div>
       <form className="formSearch col-12">
         <input
           className="inputSearch"

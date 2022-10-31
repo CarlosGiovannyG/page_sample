@@ -1,2 +1,9 @@
 export { default as featuredProperties } from "./featuredProperties";
 export { default as houseProperties } from "./houseProperties";
+export { default as apartmentProperties } from "./apartmentProperties";
+export { default as apartmentRent } from "./apartmentRent";
+export { default as apartmentVent } from "./apartmentVent";
+export { default as houseVent } from "./houseVent";
+export { default as houseRent } from "./houseRent";
+export { default as housePrueba } from "./housePrueba";
+export { default as apartmentPrueba } from "./apartmentPrueba";

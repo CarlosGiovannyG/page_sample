@@ -1,11 +1,27 @@
-import React from 'react'
+import React from "react";
+import { useSelector } from "react-redux";
+import {  Houses, Layout } from "../../../components";
+import { housePropertiesVent } from "../../../redux/actions";
+import { wrapper } from "../../../redux/store";
 
-const City = () => {
+const Vender = () => {
+  const { loading, data } = useSelector(
+    (state) => state.housePropertiesVent
+  );
+
+  console.log(data);
   return (
-    <div>
-      <h1>Comprar City</h1>
-    </div>
-  )
-}
+    <Layout>
+      <Houses title='Casas en venta' data={data} loading={loading} />
+    </Layout>
+  );
+};
 
-export default City
+export const getServerSideProps = wrapper.getServerSideProps(
+  (store) =>
+    async ({ req }) => {
+      await store.dispatch(housePropertiesVent(req));
+    }
+);
+
+export default Vender;

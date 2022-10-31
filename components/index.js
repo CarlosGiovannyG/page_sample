@@ -7,3 +7,4 @@ export { default as Loader } from "./Loader";
 export { default as Banner } from "./Banner";
 export { default as Cards } from "./Cards";
 export { default as Houses } from "./Houses";
+export { default as Apartments } from "./Apartments";

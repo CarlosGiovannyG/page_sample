@@ -21,14 +21,10 @@ const Layout = ({ children, title = "Page Example" }) => {
         <link rel="icon" href="/favicon/favicon.ico" />
       </Head>
       <Header>
-        {isLocation !== "/" ? (
-          <Search position={"search"} className={"search"} />
-        ) : (
-          <List />
-        )}
+        <List />
       </Header>
-      {isLocation !== "/" && <Breadcrumbs />}
       <ToastContainer position="bottom-right" />
+      {isLocation !== "/" && <Breadcrumbs />}
       {children}
       <Footer />
     </div>

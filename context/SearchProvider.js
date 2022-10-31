@@ -7,31 +7,33 @@ const SearchProvider = ({ children }) => {
   const router = useRouter();
   const [isLocation, setIsLocation] = useState("");
   const [location, setLocation] = useState("");
-  const [search, setSearch] = useState({
-    type: "Usados",
-    motive: "Comprar",
-    category: "Ciudad",
-    city: "Miami",
-  });
   const [typeSearch, setTypeSearch] = useState("Usados");
   const [typeProperty, setTypeProperty] = useState("Casas");
   const [motive, setMotive] = useState("Comprar");
   const [categorySearch, setCategorySearch] = useState("Ciudad");
   const [citySearch, setCitySearch] = useState("Miami");
-  const [URL, setURL] = useState("/");
   const { pathname } = router;
 
   useEffect(() => {
     setIsLocation(pathname);
   }, [pathname]);
 
-  console.log({ router });
+  const typePropertyHandler =(value)=>{
+    setTypeProperty(value)
+    router.push(`/${value.toLowerCase()}`);
 
+  }
+
+ const motiveHandler =(value)=>{
+  setMotive(value)
+   router.push(`/${typeProperty.toLowerCase()}/${value.toLowerCase()}`);
+   
+  }
   
-
-  useEffect(() => {
-    router.push(`/${typeProperty.toLowerCase()}`);
-  }, [typeProperty]);
+  const typeSearchHandler=(value)=>{
+    setTypeSearch(value)
+    router.push(`/${typeProperty.toLowerCase()}/${motive.toLowerCase()}/${value.toLowerCase()}`);
+ }
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -58,6 +60,9 @@ location.toLowerCase()
     setMotive,
     typeProperty,
     setTypeProperty,
+    typePropertyHandler,
+    motiveHandler,
+    typeSearchHandler
   };
 
   return (

@@ -219,7 +219,7 @@ ol {
 
 
 .container-buttons {
-  width: max-content;
+  width: 18rem;
   height: 3rem;
   margin: 0.5rem auto;
   display: flex;
@@ -231,6 +231,9 @@ ol {
   background-color: rgba(90, 88, 88, 0.911);
 }
 
+.container-buttons label{
+  color: white;
+}
 .button-search {
   padding: 0.2rem 1.5rem;
   border-radius: 0.4rem;
@@ -276,6 +279,13 @@ ol {
   color: black;
 }
 
+.container-select{
+  width: max-content;
+  display: flex;
+  justify-content: center;
+  padding-inline: .8rem;
+  gap: .8rem;
+}
 .formSearch {
   display: flex;
   width: 100%;

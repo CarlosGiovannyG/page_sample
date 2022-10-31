@@ -1,11 +1,24 @@
-import React from 'react'
+import React from "react";
+import { useSelector } from "react-redux";
+import { Layout } from "../../components";
+import { Apartments } from "../../components";
+import { apartmentProperties } from "../../redux/actions";
+import { wrapper } from "../../redux/store";
 
 const Apartamentos = () => {
+  const { loading, data } = useSelector((state) => state.apartmentProperties);
   return (
-    <div>
-      <h1>Apartamentos</h1>
-    </div>
-  )
-}
+    <Layout>
+      <Apartments title='Apartamentos' data={data} loading={loading} />
+    </Layout>
+  );
+};
 
-export default Apartamentos
+export const getServerSideProps = wrapper.getServerSideProps(
+  (store) =>
+    async ({ req }) => {
+      await store.dispatch(apartmentProperties(req));
+    }
+);
+
+export default Apartamentos;
