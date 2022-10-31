@@ -1,3 +1,4 @@
+import { trusted } from "mongoose";
 import Image from "next/image";
 import React from "react";
 import Carousel from "react-bootstrap/Carousel";
@@ -17,14 +18,13 @@ const PropertyDetail = ({ loading, data }) => {
               </div>
               <div className="detail-image">
                 <Carousel
-                  touch={false}
+                  touch={true}
                   keyboard={true}
-                  fade
-                  slide={false}
+                  slide={true}
                   indicators={false}
                 >
                   {dato.json_data.photos.map((img, index) => (
-                    <Carousel.Item interval={3000} key={index}>
+                    <Carousel.Item  key={index}>
                       <Image
                         className="d-block"
                         src={img}
