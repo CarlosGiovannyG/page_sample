@@ -12,32 +12,32 @@ const SearchProvider = ({ children }) => {
   const [motive, setMotive] = useState("Comprar");
   const [categorySearch, setCategorySearch] = useState("Ciudad");
   const [citySearch, setCitySearch] = useState("Miami");
-  const { pathname } = router;
+  const { asPath } = router;
 
   useEffect(() => {
-    setIsLocation(pathname);
-  }, [pathname]);
+    setIsLocation(asPath);
+  }, [asPath]);
 
-  const typePropertyHandler =(value)=>{
-    setTypeProperty(value)
+  const typePropertyHandler = (value) => {
+    setTypeProperty(value);
     router.push(`/${value.toLowerCase()}`);
+  };
 
-  }
+  const motiveHandler = (value) => {
+    setMotive(value);
+    router.push(`/${typeProperty.toLowerCase()}/${value.toLowerCase()}`);
+  };
 
- const motiveHandler =(value)=>{
-  setMotive(value)
-   router.push(`/${typeProperty.toLowerCase()}/${value.toLowerCase()}`);
-   
-  }
-  
-  const typeSearchHandler=(value)=>{
-    setTypeSearch(value)
-    router.push(`/${typeProperty.toLowerCase()}/${motive.toLowerCase()}/${value.toLowerCase()}`);
- }
+  const typeSearchHandler = (value) => {
+    setTypeSearch(value);
+    router.push(
+      `/${typeProperty.toLowerCase()}/${motive.toLowerCase()}/${value.toLowerCase()}`
+    );
+  };
 
   const submitHandler = (e) => {
     e.preventDefault();
-location.toLowerCase()
+    location.toLowerCase();
     if (location.trim()) {
       router.push(
         `/?location=${location}&guests=${guests}&category=${category}`
@@ -62,7 +62,7 @@ location.toLowerCase()
     setTypeProperty,
     typePropertyHandler,
     motiveHandler,
-    typeSearchHandler
+    typeSearchHandler,
   };
 
   return (

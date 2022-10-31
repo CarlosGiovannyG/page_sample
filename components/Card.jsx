@@ -1,24 +1,30 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
+import { useSearch } from "../context";
 
 const Card = ({ dato }) => {
   const router = useRouter();
 
-  console.log("Card", router);
+  const { isLocation } = useSearch();
+  
+  console.log("Card", {isLocation});
+
+  const searchHandler = (id) => {
+    router.push(`/${isLocation}/${id}`);
+  };
 
   return (
     <>
       {dato.json_data.photos.length ? (
         <div className="container-card">
-          <Link className="card-link" href={"/preconstruccion"}>
-            <img
-              className="card-image"
-              src={dato.json_data.photos[0]}
-              alt="imagen"
-            />
-            <div className="card-title">{dato.name}</div>
-          </Link>
+          <img
+            onClick={() => searchHandler(dato.url)}
+            className="card-image"
+            src={dato.json_data.photos[0]}
+            alt="imagen"
+          />
+          <div className="card-title">{dato.name}</div>
         </div>
       ) : null}
     </>

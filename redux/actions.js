@@ -24,6 +24,8 @@ import {
   GET_HOUSE_USED_FAIL,
   GET_HOUSE_VENT,
   GET_HOUSE_VENT_FAIL,
+  GET_PROPERTY_DETAIL,
+  GET_PROPERTY_DETAIL_FAIL,
 } from "./constants";
 
 export const featuredProperties = (req) => async (dispatch) => {
@@ -202,6 +204,24 @@ export const housePropertiesRent = (req) => async (dispatch) => {
     console.log({error});
     dispatch({
       type: GET_HOUSE_RENT_FAIL,
+      payload: error,
+    });
+  }
+};
+export const propertyDetail = (req,url) => async (dispatch) => {
+  try {
+    const { origin } = absoluteUrl(req);
+    let link = `${origin}/api/${url}`;
+    const { data } = await axios.get(link);
+  
+    dispatch({
+      type: GET_PROPERTY_DETAIL,
+      payload: data,
+    });
+  } catch (error) {
+    console.log({error});
+    dispatch({
+      type: GET_PROPERTY_DETAIL_FAIL,
       payload: error,
     });
   }

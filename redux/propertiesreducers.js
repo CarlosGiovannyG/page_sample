@@ -33,6 +33,9 @@ import {
   GET_HOUSE_VENT,
   GET_HOUSE_VENT_FAIL,
   GET_HOUSE_VENT_REQUEST,
+  GET_PROPERTY_DETAIL,
+  GET_PROPERTY_DETAIL_FAIL,
+  GET_PROPERTY_DETAIL_REQUEST,
 } from "./constants";
 
 export const featuredProperties = (state = {}, action) => {
@@ -303,6 +306,32 @@ export const housePropertiesRent = (state = {}, action) => {
       };
 
     case GET_HOUSE_RENT_FAIL:
+      return {
+        error: action.payload,
+      };
+    case CLEAR_ERRORS:
+      return {
+        ...state,
+        error: null,
+      };
+    default:
+      return state;
+  }
+};
+
+export const propertyDetail = (state = {}, action) => {
+  switch (action.type) {
+    case  GET_PROPERTY_DETAIL_REQUEST:
+      return {
+        loading: true,
+      };
+
+    case GET_PROPERTY_DETAIL:
+      return {
+        data: action.payload.data,
+      };
+
+    case GET_PROPERTY_DETAIL_FAIL:
       return {
         error: action.payload,
       };

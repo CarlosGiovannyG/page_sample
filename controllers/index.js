@@ -7,3 +7,4 @@ export { default as houseVent } from "./houseVent";
 export { default as houseRent } from "./houseRent";
 export { default as housePrueba } from "./housePrueba";
 export { default as apartmentPrueba } from "./apartmentPrueba";
+export { default as queryId } from "./queryId";

@@ -11,6 +11,7 @@ import {
   apartmentUsed,
   houseNews,
   houseUsed,
+  propertyDetail
 } from "./propertiesreducers";
 const reducer = combineReducers({
   featuredProperties,
@@ -24,6 +25,7 @@ const reducer = combineReducers({
   apartmentUsed,
   houseNews,
   houseUsed,
+  propertyDetail
 });
 
 export default reducer;
