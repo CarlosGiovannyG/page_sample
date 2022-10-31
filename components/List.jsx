@@ -3,7 +3,8 @@ import React from "react";
 
 const List = () => {
   return (
-    <div className="menu-container container col-9 ">
+  <div className="menu-container-none">
+      <div className="menu-container container col-10 ">
       <ul className="list-menu row justify-content-around text-center">
         <li>
           <Link href="/">
@@ -79,6 +80,7 @@ const List = () => {
         </li>
       </ul>
     </div>
+  </div>
   );
 };
 

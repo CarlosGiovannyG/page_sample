@@ -22,15 +22,13 @@ const Header = ({ children }) => {
           </div>
         </div>
 
-          {children}
+        {children}
 
-        <div className="col-2 mt-3 mt-md-0 text-center">
-          <Link href="/">
-            <div className="btn btn-danger px-1 text-white login-header-btn float-right">
-              Iniciar Session
-            </div>
-          </Link>
-        </div>
+        <Link href={"/"} className="login-link">
+          <div className="login">
+            <span className="login">Iniciar Session</span>
+          </div>
+        </Link>
       </div>
     </nav>
   );

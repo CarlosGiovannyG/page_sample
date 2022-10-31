@@ -7,9 +7,18 @@ const SearchProvider = ({ children }) => {
   const router = useRouter();
   const [isLocation, setIsLocation] = useState("");
   const [location, setLocation] = useState("");
+  const [search, setSearch] = useState({
+    type: "Usados",
+    motive: "Comprar",
+    category: "Ciudad",
+    city: "Miami",
+  });
   const [typeSearch, setTypeSearch] = useState("Usados");
+  const [typeProperty, setTypeProperty] = useState("Casas");
+  const [motive, setMotive] = useState("Comprar");
   const [categorySearch, setCategorySearch] = useState("Ciudad");
   const [citySearch, setCitySearch] = useState("Miami");
+  const [URL, setURL] = useState("/");
   const { pathname } = router;
 
   useEffect(() => {
@@ -18,17 +27,15 @@ const SearchProvider = ({ children }) => {
 
   console.log({ router });
 
-  const handleSubmit = (data) => {
-    setCitySearch(data);
-  };
+  
 
-  const handleClick = (dato) => {
-    setTypeSearch(dato);
-  };
+  useEffect(() => {
+    router.push(`/${typeProperty.toLowerCase()}`);
+  }, [typeProperty]);
 
   const submitHandler = (e) => {
     e.preventDefault();
-
+location.toLowerCase()
     if (location.trim()) {
       router.push(
         `/?location=${location}&guests=${guests}&category=${category}`
@@ -43,10 +50,14 @@ const SearchProvider = ({ children }) => {
     setCategorySearch,
     categorySearch,
     citySearch,
-    handleClick,
+    setTypeSearch,
     submitHandler,
-    handleSubmit,
+    setCitySearch,
     isLocation,
+    motive,
+    setMotive,
+    typeProperty,
+    setTypeProperty,
   };
 
   return (

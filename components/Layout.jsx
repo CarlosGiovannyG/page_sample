@@ -7,11 +7,11 @@ import Footer from "./Footer";
 import List from "./List";
 import { useSearch } from "../context";
 import Breadcrumbs from "./Breadcrumbs ";
+import Search from "./Search";
 
 const Layout = ({ children, title = "Page Example" }) => {
   const { isLocation } = useSearch();
 
- 
   return (
     <div>
       <Head>
@@ -21,11 +21,13 @@ const Layout = ({ children, title = "Page Example" }) => {
         <link rel="icon" href="/favicon/favicon.ico" />
       </Head>
       <Header>
-        <List />
+        {isLocation !== "/" ? (
+          <Search position={"search"} className={"search"} />
+        ) : (
+          <List />
+        )}
       </Header>
-      {isLocation !== '/' &&
-      <Breadcrumbs />
-      }
+      {isLocation !== "/" && <Breadcrumbs />}
       <ToastContainer position="bottom-right" />
       {children}
       <Footer />

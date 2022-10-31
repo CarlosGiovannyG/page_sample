@@ -11,8 +11,7 @@ const dbConnect = () => {
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
-      useFindAndModify: false,
-      useCreateIndex: true,
+     
     },
     (err) => {
       if (err) throw err;

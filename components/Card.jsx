@@ -6,7 +6,7 @@ const Card = ({ dato }) => {
   const { isLocation } = useSearch();
   return (
     <>
-      {isLocation === '/' && dato.json_data.photos.length ? (
+      { dato.json_data.photos.length ? (
         <div className="container-card">
           <Link className="card-link" href={"/preconstruccion"}>
             <img
