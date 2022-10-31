@@ -16,10 +16,21 @@ const PropertyDetail = ({ loading, data }) => {
                 <span>{dato.name}</span>
               </div>
               <div className="detail-image">
-                <Carousel interval={1500} slide={false}>
+                <Carousel
+                  touch={false}
+                  keyboard={true}
+                  fade
+                  slide={false}
+                  indicators={false}
+                >
                   {dato.json_data.photos.map((img, index) => (
-                    <Carousel.Item key={index}>
-                      <Image src={img} width={1000} height={600} />
+                    <Carousel.Item interval={3000} key={index}>
+                      <Image
+                        className="d-block"
+                        src={img}
+                        width={1000}
+                        height={500}
+                      />
                       <Carousel.Caption>
                         <h3>{dato.name}</h3>
                         <p>{dato.json_data.address.full}</p>

@@ -34,7 +34,6 @@ Scroll Bar ::-webkit-scrollbar-track {
   -webkit-box-shadow: 0 4px 6px -6px #222;
   -moz-box-shadow: 0 4px 6px -6px #222;
   box-shadow: 0 4px 6px -6px #222;
-
 }
 
 .detail-container {
@@ -50,21 +49,20 @@ Scroll Bar ::-webkit-scrollbar-track {
   width: 80%;
   margin: 0 auto;
 }
-.detail-title > span{
+.detail-title > span {
   font-size: 20px;
   color: black;
   font-weight: 600;
 }
 
-.detail-image{
-padding: 1rem;
-  margin: .5rem auto;
+.detail-image {
+  margin: 0.5rem auto;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.container-data{
+.container-data {
   display: grid;
   width: 94%;
   height: max-content;
@@ -76,20 +74,19 @@ padding: 1rem;
   margin: 0 auto;
   padding-bottom: 10rem;
   padding: 1rem;
-
 }
 
-.container-data-item{
+.container-data-item {
   width: 80%;
   height: 2rem;
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  padding-left: .5rem;
+  padding-left: 0.5rem;
   color: #000000;
 }
 
-.container-data-comment{
+.container-data-comment {
   width: 100%;
   display: flex;
   flex-direction: row;
