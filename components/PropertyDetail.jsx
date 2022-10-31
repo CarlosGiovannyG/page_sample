@@ -8,7 +8,7 @@ const PropertyDetail = ({ loading, data }) => {
       {!loading && data && (
         <div>
           {data.map((dato) => (
-            <div>
+            <div key={dato.url}>
               <h3>{dato.json_data.property.subType}</h3>
               <Image src={dato.json_data.photos[0]} width={300} height={300} />
               <h3>{dato.json_data.property.listDate}</h3>
