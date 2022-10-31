@@ -3,9 +3,6 @@ import React from "react";
 import Carousel from "react-bootstrap/Carousel";
 
 const PropertyDetail = ({ loading, data }) => {
-  console.log("====================================");
-  console.log(data);
-  console.log("====================================");
   return (
     <>
       {!loading && data && (
@@ -20,8 +17,8 @@ const PropertyDetail = ({ loading, data }) => {
               </div>
               <div className="detail-image">
                 <Carousel interval={1500} slide={false}>
-                  {dato.json_data.photos.map((img) => (
-                    <Carousel.Item>
+                  {dato.json_data.photos.map((img, index) => (
+                    <Carousel.Item key={index}>
                       <Image src={img} width={1000} height={600} />
                       <Carousel.Caption>
                         <h3>{dato.name}</h3>

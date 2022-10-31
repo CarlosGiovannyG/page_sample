@@ -9,7 +9,6 @@ const Rentar = () => {
     (state) => state.apartmentPropertiesRent
   );
 
-  console.log(data);
   return (
     <Layout>
       <Apartments data={data} loading={loading} />

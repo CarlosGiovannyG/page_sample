@@ -6,10 +6,9 @@ import { wrapper } from "../../../../redux/store";
 const Usados = () => {
   const { loading, data } = useSelector((state) => state.houseNews);
 
-  console.log(data);
   return (
     <Layout>
-      <Houses title='Casas en renta usadas' data={data} loading={loading} />
+      <Houses title="Casas en renta usadas" data={data} loading={loading} />
     </Layout>
   );
 };

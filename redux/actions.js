@@ -66,7 +66,6 @@ export const apartmentProperties = (req) => async (dispatch) => {
     const { origin } = absoluteUrl(req);
     let link = `${origin}/api/apartamentos`;
     const { data } = await axios.get(link);
-    console.log("Apart", { data });
     dispatch({
       type: GET_APARTMENTS_PROPERTIES,
       payload: data,
