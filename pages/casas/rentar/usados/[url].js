@@ -6,7 +6,6 @@ import { wrapper } from '../../../../redux/store';
 
 const SearchId = () => {
   const { loading, data } = useSelector((state) => state.propertyDetail);
-  console.log("SearchId", data)
   return (
     <Layout>
       <PropertyDetail data={data} loading={loading} />
@@ -15,7 +14,7 @@ const SearchId = () => {
 }
 
 export const getServerSideProps = wrapper.getServerSideProps((store) => async ({ req, params }) => {
-  await store.dispatch(propertyDetail(req, params.id))
+  await store.dispatch(propertyDetail(req, params.url))
 })
 
 

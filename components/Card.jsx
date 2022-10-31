@@ -5,10 +5,7 @@ import { useSearch } from "../context";
 
 const Card = ({ dato }) => {
   const router = useRouter();
-
   const { isLocation } = useSearch();
-  
-  console.log("Card", {isLocation});
 
   const searchHandler = (id) => {
     router.push(`/${isLocation}/${id}`);

@@ -22,6 +22,85 @@ Scroll Bar ::-webkit-scrollbar-track {
   background-clip: padding-box;
   border-radius: 5px;
 }
+/* pagina detalle */
+.detail {
+  width: 70%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem auto;
+  padding: 1rem;
+  -webkit-box-shadow: 0 4px 6px -6px #222;
+  -moz-box-shadow: 0 4px 6px -6px #222;
+  box-shadow: 0 4px 6px -6px #222;
+
+}
+
+.detail-container {
+  width: 80%;
+  display: block;
+  align-items: center;
+  height: max-content;
+}
+
+.detail-title {
+  display: flex;
+  justify-content: center;
+  width: 80%;
+  margin: 0 auto;
+}
+.detail-title > span{
+  font-size: 20px;
+  color: black;
+  font-weight: 600;
+}
+
+.detail-image{
+padding: 1rem;
+  margin: .5rem auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-data{
+  display: grid;
+  width: 94%;
+  height: max-content;
+  gap: 1rem;
+  grid-auto-rows: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  padding-bottom: 10rem;
+  padding: 1rem;
+
+}
+
+.container-data-item{
+  width: 80%;
+  height: 2rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: .5rem;
+  color: #000000;
+}
+
+.container-data-comment{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding: 1rem;
+  -webkit-box-shadow: 0 4px 16px -6px #222;
+  -moz-box-shadow: 0 4px 16px -6px #222;
+  box-shadow: 0 4px 16px -6px #222;
+}
 
 /* estilos miga de pan  */
 .container-bread {
@@ -117,10 +196,9 @@ nav {
 }
 
 /* menu principal */
- .menu-container-none {
+.menu-container-none {
   width: 80%;
   margin: 0 auto;
-
 }
 .menu-container {
   width: 100%;
@@ -184,12 +262,12 @@ ol {
   padding: 0.1rem 0.1rem;
 }
 
-.search{
+.search {
   width: 50%;
   margin: 0 auto;
 }
 
-.search-title{
+.search-title {
   width: 80%;
   margin: 0 auto;
   text-align: center;
@@ -197,7 +275,7 @@ ol {
   font-weight: 600;
 }
 
-.search form >input{
+.search form > input {
   width: 80%;
   height: 2.5rem;
   font-size: 18px;
@@ -207,8 +285,7 @@ ol {
   border: 1px solid rgb(120, 121, 121);
 }
 
-
-.search form >button{
+.search form > button {
   border: none;
   background-color: red;
   height: 2.5rem;
@@ -216,7 +293,6 @@ ol {
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
 }
-
 
 .container-buttons {
   width: 18rem;
@@ -231,7 +307,7 @@ ol {
   background-color: rgba(90, 88, 88, 0.911);
 }
 
-.container-buttons label{
+.container-buttons label {
   color: white;
 }
 .button-search {
@@ -279,12 +355,12 @@ ol {
   color: black;
 }
 
-.container-select{
+.container-select {
   width: max-content;
   display: flex;
   justify-content: center;
-  padding-inline: .8rem;
-  gap: .8rem;
+  padding-inline: 0.8rem;
+  gap: 0.8rem;
 }
 .formSearch {
   display: flex;

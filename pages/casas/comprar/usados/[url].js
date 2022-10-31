@@ -14,7 +14,7 @@ const SearchId = () => {
 }
 
 export const getServerSideProps = wrapper.getServerSideProps((store) => async ({ req, params }) => {
-  await store.dispatch(propertyDetail(req, params.id))
+  await store.dispatch(propertyDetail(req, params.url))
 })
 
 
