@@ -9,9 +9,6 @@ const Home = ({ loading, data, title }) => {
 
   return (
     <>
-      <Banner>
-        <Search position={"home"} className={"search-home"} />
-      </Banner>
       {loading ? (
         <Loader />
       ) : (

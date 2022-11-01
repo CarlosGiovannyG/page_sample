@@ -7,9 +7,6 @@ import Search from "./Search";
 const Houses = ({ loading, data, title }) => {
   return (
     <>
-      <Banner>
-        <Search position={"casas"} className={"search-home"} />
-      </Banner>
       {loading ? <Loader /> : <Cards data={data} title={title} />}
     </>
   );

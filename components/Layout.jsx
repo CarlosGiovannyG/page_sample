@@ -8,6 +8,7 @@ import List from "./List";
 import { useSearch } from "../context";
 import Breadcrumbs from "./Breadcrumbs ";
 import Search from "./Search";
+import Banner from "./Banner";
 
 const Layout = ({ children, title = "Page Example" }) => {
   const { isLocation } = useSearch();
@@ -23,6 +24,9 @@ const Layout = ({ children, title = "Page Example" }) => {
       <Header>
         <List />
       </Header>
+      <Banner>
+        <Search position={"casas"} className={"search-home"} />
+      </Banner>
       <ToastContainer position="bottom-right" />
       {isLocation !== "/" && <Breadcrumbs />}
       {children}

@@ -104,12 +104,12 @@ Scroll Bar ::-webkit-scrollbar-track {
 
 /* estilos miga de pan  */
 .container-bread {
-  margin: 0.5rem auto;
+  margin: 0 auto;
   display: flex;
-  width: 80%;
+  width: 90%;
   height: 4vh;
   justify-content: flex-start;
-  padding: 0.4rem;
+  padding-block: 0.4rem;
 }
 
 .list-bread {
@@ -414,7 +414,7 @@ ol {
   justify-content: center;
   word-wrap: break-word;
   width: 97%;
-  margin: 0 auto;
+  margin: 1rem auto .5rem auto;
   min-height: 50vh;
   background-image: url("../public/images/banner.png");
   background-position: center;
@@ -443,7 +443,7 @@ ol {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  margin: 1rem auto;
+  margin: 0 auto;
   border-radius: 15px;
   padding: 1rem 1rem;
 }
@@ -671,5 +671,18 @@ ol {
   width: 10rem;
   height: 2rem;
   font-size: 1.1em;
+}
+
+.container-bread {
+  width: 95%;
+  padding: 0.4rem;
+}
+
+.item-bread {
+  font-size: 14px;
+}
+.item-bread-active {
+  font-size: 14px;
+  margin-left: 0.2rem;
 }
 }
