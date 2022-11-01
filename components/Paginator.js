@@ -20,13 +20,13 @@ const Paginator = ({ currentPage, totalItems, itemsPerPage, handlePaged }) => {
         (num) =>
           currentPage === num && (
             <div className="number-page" id={num} key={`P` + num}>
-              {num}
+              {num < 10 ? `0${num}` : num} de {pageNumbers.length <10 ? `0${pageNumbers.length}`:pageNumbers.length}
             </div>
           )
       )}
 
       <button
-        disabled={(currentPage > pageNumbers.length - 1)}
+        disabled={currentPage > pageNumbers.length - 1}
         className="buttonNext"
         onClick={handlePaged}
         id="next"

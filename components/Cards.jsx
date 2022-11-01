@@ -3,7 +3,7 @@ import Card from "./Card";
 import Paginator from "./Paginator";
 const Cards = ({ title, data }) => {
   const [currentPage, setCurrentPage] = useState(1)
-  const [itemsPerPage] = useState(12)
+  const [itemsPerPage] = useState(4)
 
 
   
@@ -16,7 +16,7 @@ const Cards = ({ title, data }) => {
                 setCurrentPage(currentPage - 1);
         }
     } else if (e.target.id === 'next') {
-        if (itemsToShow.length >= 9)
+        if (itemsToShow.length >= 1)
             setCurrentPage(currentPage + 1);
     } else
         setCurrentPage(Number(e.target.value));

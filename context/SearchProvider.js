@@ -13,6 +13,7 @@ const SearchProvider = ({ children }) => {
   const [categorySearch, setCategorySearch] = useState("Ciudad");
   const [citySearch, setCitySearch] = useState("Miami");
   const [isSearch, setIsSearch] = useState(false);
+  const [coordenadas, setCoordenadas] = useState([])
   const { asPath } = router;
 
   useEffect(() => {
@@ -70,6 +71,8 @@ const SearchProvider = ({ children }) => {
     typeSearchHandler,
     isSearch,
     setIsSearch,
+    coordenadas,
+    setCoordenadas
   };
 
   return (
