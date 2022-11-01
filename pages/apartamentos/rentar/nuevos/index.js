@@ -9,7 +9,6 @@ const Nuevos = () => {
    (state) => state.apartmentNews
  );
 
- console.log(data);
  return (
    <Layout>
      <Apartments title='Apartamentos en renta nuevos' data={data} loading={loading} />

@@ -5,13 +5,10 @@ import { useSearch } from "../context";
 const Search = ({ className, position }) => {
   const {
     typeSearch,
-    setTypeSearch,
-    categorySearch,
     setCategorySearch,
     citySearch,
     setCitySearch,
     motive,
-    setMotive,
     typeProperty,
     motiveHandler,
     typePropertyHandler,
@@ -29,7 +26,7 @@ const Search = ({ className, position }) => {
             value={typeProperty}
             onChange={(e) => typePropertyHandler(e.target.value)}
           >
-            {["Casas", "Apartamentos"].map((type) => (
+            {["","Casas", "Apartamentos"].map((type) => (
               <option key={type} value={type}>
                 {type}
               </option>
@@ -44,7 +41,7 @@ const Search = ({ className, position }) => {
             value={motive}
             onChange={(e) => motiveHandler(e.target.value)}
           >
-            {["Rentar", "Comprar"].map((type) => (
+            {["","Rentar", "Comprar"].map((type) => (
               <option key={type} value={type}>
                 {type}
               </option>
@@ -61,7 +58,7 @@ const Search = ({ className, position }) => {
             value={typeSearch}
             onChange={(e) => typeSearchHandler(e.target.value)}
           >
-            {["Usados", "Nuevos"].map((type) => (
+            {["","Usados", "Nuevos"].map((type) => (
               <option key={type} value={type}>
                 {type}
               </option>
@@ -75,9 +72,9 @@ const Search = ({ className, position }) => {
             className="button-search"
             id="room_type_field"
             value={motive}
-            onChange={(e) => setMotive(e.target.value)}
+            onChange={(e) => setCategorySearch(e.target.value)}
           >
-            {["Ciudad", "Código Postal", "Condado"].map((type) => (
+            {["","Ciudad", "Código Postal", "Condado"].map((type) => (
               <option key={type} value={type}>
                 {type}
               </option>
@@ -90,7 +87,7 @@ const Search = ({ className, position }) => {
           className="inputSearch"
           type="text"
           name="search"
-          onChange={(e) => handleSubmit(e.target.value)}
+          onChange={(e) => setCitySearch(e.target.value)}
           value={citySearch}
           placeholder="Selecciona una opción y has tu búsqueda"
         />

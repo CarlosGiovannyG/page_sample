@@ -74,7 +74,6 @@ export const houseProperties = (state = {}, action) => {
 
     case GET_HOUSE_PROPERTIES:
       return {
-        success: action.payload.success,
         data: action.payload.data,
       };
 

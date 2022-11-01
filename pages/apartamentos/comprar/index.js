@@ -9,7 +9,6 @@ const Vender = () => {
     (state) => state.apartmentPropertiesVent
   );
 
-  console.log(data);
   return (
     <Layout>
       <Apartments title='Apartamentos Venta'  data={data} loading={loading} />

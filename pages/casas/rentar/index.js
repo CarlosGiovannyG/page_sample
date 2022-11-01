@@ -9,7 +9,7 @@ const Rentar = () => {
 
   return (
     <Layout>
-      <Houses title="Casas en renta" data={data} loading={loading} />
+      <Houses title='Casas en renta'   data={data} loading={loading} />
     </Layout>
   );
 };

@@ -8,7 +8,7 @@ const Usados = () => {
 
   return (
     <Layout>
-      <Houses title="Casas en renta usadas" data={data} loading={loading} />
+      <Houses title='Casas en renta usadas' data={data} loading={loading} />
     </Layout>
   );
 };

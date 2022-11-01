@@ -7,11 +7,12 @@ const SearchProvider = ({ children }) => {
   const router = useRouter();
   const [isLocation, setIsLocation] = useState("");
   const [location, setLocation] = useState("");
-  const [typeSearch, setTypeSearch] = useState("Usados");
-  const [typeProperty, setTypeProperty] = useState("Casas");
-  const [motive, setMotive] = useState("Comprar");
+  const [typeSearch, setTypeSearch] = useState("");
+  const [typeProperty, setTypeProperty] = useState("");
+  const [motive, setMotive] = useState("");
   const [categorySearch, setCategorySearch] = useState("Ciudad");
   const [citySearch, setCitySearch] = useState("Miami");
+  const [isSearch, setIsSearch] = useState(false);
   const { asPath } = router;
 
   useEffect(() => {
@@ -22,29 +23,34 @@ const SearchProvider = ({ children }) => {
     setTypeProperty(value);
     router.push(`/${value.toLowerCase()}`);
   };
-
   const motiveHandler = (value) => {
     setMotive(value);
-    router.push(`/${typeProperty.toLowerCase()}/${value.toLowerCase()}`);
+    if (!typeProperty) {
+      router.push(`/casas/${value.toLowerCase()}`);
+      return;
+    } else {
+      router.push(`/${typeProperty.toLowerCase()}/${value.toLowerCase()}`);
+    }
   };
 
   const typeSearchHandler = (value) => {
     setTypeSearch(value);
-    router.push(
-      `/${typeProperty.toLowerCase()}/${motive.toLowerCase()}/${value.toLowerCase()}`
-    );
+    if (!typeProperty || motive) {
+      router.push(`/casas/comprar/${value.toLowerCase()}`)
+      return
+    } else {
+      router.push(
+        `/${typeProperty.toLowerCase()}/${motive.toLowerCase()}/${value.toLowerCase()}`
+      );
+    }
   };
 
   const submitHandler = (e) => {
     e.preventDefault();
-    location.toLowerCase();
-    if (location.trim()) {
-      router.push(
-        `/?location=${location}&guests=${guests}&category=${category}`
-      );
-    } else {
-      router.push("/");
-    }
+    setIsSearch(true);
+    setTimeout(() => {
+      setIsSearch(false);
+    }, 5000);
   };
 
   const contextValue = {
@@ -57,12 +63,13 @@ const SearchProvider = ({ children }) => {
     setCitySearch,
     isLocation,
     motive,
-    setMotive,
     typeProperty,
     setTypeProperty,
     typePropertyHandler,
     motiveHandler,
     typeSearchHandler,
+    isSearch,
+    setIsSearch,
   };
 
   return (

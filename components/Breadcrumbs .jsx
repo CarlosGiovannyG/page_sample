@@ -1,12 +1,11 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
-import { Breadcrumb } from "react-bootstrap";
 import { useSearch } from "../context";
 
 const Breadcrumbs = () => {
   const router = useRouter();
-  const { isLocation, breadHandler } = useSearch();
+  const { isLocation} = useSearch();
 
   const location = isLocation.split("/");
   location[0] = "/";

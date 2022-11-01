@@ -9,7 +9,6 @@ const Usados = () => {
    (state) => state.apartmentUsed
  );
 
- console.log(data);
  return (
    <Layout>
      <Apartments title='Apartamentos en venta usados' data={data} loading={loading} />

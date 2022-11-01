@@ -1,13 +1,11 @@
 import React from "react";
-import { useSelector } from "react-redux";
-import { toast } from "react-toastify";
 import Banner from "./Banner";
 import Cards from "./Cards";
 import Loader from "./Loader";
 import Search from "./Search";
 
-const Home = () => {
-  const { loading, data } = useSelector((state) => state.featuredProperties);
+const Home = ({ loading, data, title }) => {
+  
 
   return (
     <>
@@ -17,7 +15,7 @@ const Home = () => {
       {loading ? (
         <Loader />
       ) : (
-        <Cards data={data} title={"Propiedades destacadas"} />
+        <Cards data={data} title={title} />
       )}
     </>
   );
