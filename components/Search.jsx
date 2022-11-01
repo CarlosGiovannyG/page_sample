@@ -65,7 +65,6 @@ const Search = ({ className, position }) => {
             ))}
           </select>
         </div>
-
         <div className="container-buttons">
           <label htmlFor="room_type_field">Buscar por:</label>
           <select
