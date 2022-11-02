@@ -10,7 +10,7 @@ import Breadcrumbs from "./Breadcrumbs ";
 import Search from "./Search";
 import Banner from "./Banner";
 
-const Layout = ({ children, title = "Page Example" }) => {
+const Layout = ({ children, title = "Inmobiliaria" }) => {
   const { isLocation } = useSearch();
 
   return (
