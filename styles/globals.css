@@ -22,6 +22,16 @@ Scroll Bar ::-webkit-scrollbar-track {
   background-clip: padding-box;
   border-radius: 5px;
 }
+/* información de los filtros */
+.info-filter{
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-size: 1rem;
+  background-color: rgba(90, 88, 88, 0.911);
+  margin-bottom: 1rem;
+}
+
 /* pagina detalle */
 .container-detail {
   display: flex;

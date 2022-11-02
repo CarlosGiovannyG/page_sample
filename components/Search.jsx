@@ -99,7 +99,9 @@ const Search = ({ className }) => {
         />
        
       </form>
-      <div className="row wrapper"></div>
+      <span className="info-filter">
+      Puedes filtrar por:  Area - Dirección - Código Postal - Ciudad - Año de creación Tipo de Vivienda
+      </span>
     </div>
   );
 };

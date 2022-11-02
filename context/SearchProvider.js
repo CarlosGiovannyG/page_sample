@@ -60,8 +60,19 @@ const SearchProvider = ({ children }) => {
         (dato) =>
           dato.city.toLowerCase().replace(/\s+/g, "") ===
           inputSearch.toLowerCase().replace(/\s+/g, "") ||
-          dato.postalCode === Number(inputSearch) ||
+          dato.postalCode === inputSearch ||
           dato.geo_county.toLowerCase().replace(/\s+/g, "") ===
+          inputSearch.toLowerCase().replace(/\s+/g, "")||
+          dato.json_data.address.full.toLowerCase().replace(/\s+/g, "") ===
+          inputSearch.toLowerCase().replace(/\s+/g, "")
+          ||
+          dato.property_yearBuilt.toLowerCase().replace(/\s+/g, "") ===
+          inputSearch.toLowerCase().replace(/\s+/g, "")
+          ||
+          dato.json_data.property.subType.toLowerCase().replace(/\s+/g, "") ===
+          inputSearch.toLowerCase().replace(/\s+/g, "")
+          ||
+          dato.property_area.toLowerCase().replace(/\s+/g, "") ===
           inputSearch.toLowerCase().replace(/\s+/g, "")
       );
 
