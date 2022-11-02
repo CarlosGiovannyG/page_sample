@@ -7,13 +7,10 @@ const Search = ({ className }) => {
 
   const {
     typeSearch,
-    setCategorySearch,
     motive,
     typeProperty,
     motiveHandler,
     typePropertyHandler,
-    submitHandler,
-    categorySearch,
     typeSearchHandler,
     setInputSearch,
     inputSearch

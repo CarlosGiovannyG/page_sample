@@ -9,7 +9,6 @@ const SearchProvider = ({ children }) => {
   const [typeSearch, setTypeSearch] = useState("");
   const [typeProperty, setTypeProperty] = useState("");
   const [motive, setMotive] = useState("");
-  const [categorySearch, setCategorySearch] = useState("");
   const [inputSearch, setInputSearch] = useState("");
   const [coordenadas, setCoordenadas] = useState([]);
   const { asPath } = router;
@@ -19,7 +18,6 @@ const SearchProvider = ({ children }) => {
       setTypeProperty("");
       setMotive("");
       setTypeSearch("");
-      setCategorySearch('')
       setInputSearch('')
     }
     setIsLocation(asPath);
@@ -41,7 +39,11 @@ const SearchProvider = ({ children }) => {
 
   const typeSearchHandler = (value) => {
     setTypeSearch(value);
-    if (!typeProperty || motive) {
+    if (typeProperty || !motive) {
+      router.push(
+        `/${typeProperty.toLowerCase()}/comprar/${value.toLowerCase()}`
+      );
+    }else if (!typeProperty || !motive) {
       router.push(`/casas/comprar/${value.toLowerCase()}`);
       return;
     } else {
@@ -82,8 +84,6 @@ const SearchProvider = ({ children }) => {
 
   const contextValue = {
     typeSearch,
-    setCategorySearch,
-    categorySearch,
     setTypeSearch,
     submitHandler,
     isLocation,
@@ -97,7 +97,6 @@ const SearchProvider = ({ children }) => {
     setCoordenadas,
     setInputSearch,
     inputSearch,
-    submitHandler,
   };
 
   return (
