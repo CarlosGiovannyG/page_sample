@@ -283,9 +283,9 @@ ol {
 .list-menu li ul {
   display: none;
   position: absolute;
-  min-width: 2rem;
-  max-width: 2rem;
   width: max-content;
+  padding: 15px 25px;
+  background-color: #fff8f8;
 }
 
 .list-menu li:hover > ul {
@@ -355,7 +355,7 @@ ol {
 
 .container-buttons label {
   color: white;
-  width: 40%;
+  width: 42%;
   height: 2.5rem;
   display: flex;
   justify-content: center;
@@ -448,9 +448,11 @@ ol {
   align-items: center;
   justify-content: center;
   word-wrap: break-word;
-  width: 97%;
+  width: 100%;
   margin: 1rem auto 0.5rem auto;
-  min-height: 50vh;
+  min-height: 40vh;
+  margin-top: .6rem;
+  padding-top: 1.2rem;
   background-image: url("../public/images/banner.png");
   background-position: center;
   background-repeat: no-repeat;
@@ -641,7 +643,7 @@ ol {
   .banner-title {
     color: #fff;
     font-size: 30px;
-    margin: 0 auto 10px;
+    margin: .5rem auto 10px;
   }
 
   .cards {
