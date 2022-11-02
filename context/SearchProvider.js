@@ -11,6 +11,7 @@ const SearchProvider = ({ children }) => {
   const [motive, setMotive] = useState("");
   const [inputSearch, setInputSearch] = useState("");
   const [coordenadas, setCoordenadas] = useState([]);
+  const [isDetail, setIsDetail] = useState(false);
   const { asPath } = router;
 
   useEffect(() => {
@@ -18,7 +19,7 @@ const SearchProvider = ({ children }) => {
       setTypeProperty("");
       setMotive("");
       setTypeSearch("");
-      setInputSearch('')
+      setInputSearch("");
     }
     setIsLocation(asPath);
   }, [asPath]);
@@ -43,7 +44,7 @@ const SearchProvider = ({ children }) => {
       router.push(
         `/${typeProperty.toLowerCase()}/comprar/${value.toLowerCase()}`
       );
-    }else if (!typeProperty || !motive) {
+    } else if (!typeProperty || !motive) {
       router.push(`/casas/comprar/${value.toLowerCase()}`);
       return;
     } else {
@@ -57,27 +58,23 @@ const SearchProvider = ({ children }) => {
     let result = [];
     if (!data?.length || !inputSearch) {
       result = data;
-    }else{
+    } else {
       result = data.filter(
         (dato) =>
           dato?.city.toLowerCase().replace(/\s+/g, "") ===
-          inputSearch.toLowerCase().replace(/\s+/g, "") ||
+            inputSearch.toLowerCase().replace(/\s+/g, "") ||
           dato?.postalCode === inputSearch ||
           dato?.geo_county.toLowerCase().replace(/\s+/g, "") ===
-          inputSearch.toLowerCase().replace(/\s+/g, "")||
+            inputSearch.toLowerCase().replace(/\s+/g, "") ||
           dato?.json_data.address.full.toLowerCase().replace(/\s+/g, "") ===
-          inputSearch.toLowerCase().replace(/\s+/g, "")
-          ||
+            inputSearch.toLowerCase().replace(/\s+/g, "") ||
           dato?.property_yearBuilt.toLowerCase().replace(/\s+/g, "") ===
-          inputSearch.toLowerCase().replace(/\s+/g, "")
-          ||
+            inputSearch.toLowerCase().replace(/\s+/g, "") ||
           dato?.subTypeText.toLowerCase().replace(/\s+/g, "") ===
-          inputSearch.toLowerCase().replace(/\s+/g, "")
-          ||
+            inputSearch.toLowerCase().replace(/\s+/g, "") ||
           dato?.property_area.toLowerCase().replace(/\s+/g, "") ===
-          inputSearch.toLowerCase().replace(/\s+/g, "")
+            inputSearch.toLowerCase().replace(/\s+/g, "")
       );
-
     }
     return result;
   };
@@ -97,6 +94,8 @@ const SearchProvider = ({ children }) => {
     setCoordenadas,
     setInputSearch,
     inputSearch,
+    isDetail,
+    setIsDetail,
   };
 
   return (

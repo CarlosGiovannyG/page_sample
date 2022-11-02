@@ -1,12 +1,22 @@
 import Image from "next/image";
-import React from "react";
+import React, { useEffect } from "react";
 import Carousel from "react-bootstrap/Carousel";
+import { useSearch } from "../context";
 
 const PropertyDetail = ({ loading, data }) => {
+  const { setIsDetail, isDetail } = useSearch();
+
+  useEffect(() => {
+    setIsDetail(true);
+    return () => {
+      setIsDetail(false);
+    };
+  }, []);
+
   return (
     <>
       {!loading && data && (
-        <div className="container-detail" >
+        <div className="container-detail">
           <h2 className="title-detail">Detalles de la búsqueda </h2>
           <div className="detail">
             {data.map((dato) => (

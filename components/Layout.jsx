@@ -11,8 +11,7 @@ import Search from "./Search";
 import Banner from "./Banner";
 
 const Layout = ({ children, title = "Inmobiliaria" }) => {
-  const { isLocation } = useSearch();
-
+  const { isLocation, isDetail } = useSearch();
   return (
     <div>
       <Head>
@@ -24,9 +23,11 @@ const Layout = ({ children, title = "Inmobiliaria" }) => {
       <Header>
         <List />
       </Header>
-      <Banner>
-        <Search position={"casas"} className={"search-home"} />
-      </Banner>
+      {!isDetail && (
+        <Banner>
+          <Search position={"casas"} className={"search-home"} />
+        </Banner>
+      )}
       <ToastContainer position="bottom-right" />
       {isLocation !== "/" && <Breadcrumbs />}
       {children}
