@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
 import {  Houses, Layout } from "../../../../components";
+import { useSearch } from "../../../../context";
 import { houseUsed } from "../../../../redux/actions";
 import { wrapper } from "../../../../redux/store";
 
@@ -8,10 +9,11 @@ const Usados = () => {
  const { loading, data } = useSelector(
    (state) => state.houseUsed
  );
-
+ const { submitHandler,categorySearch, inputSearch} = useSearch();
+ const dataShow = submitHandler(data,categorySearch,inputSearch);
  return (
    <Layout>
-     <Houses title='Casas en venta usadas'  data={data} loading={loading} />
+     <Houses title='Casas en venta usadas'  data={dataShow} loading={loading} />
    </Layout>
  );
 };

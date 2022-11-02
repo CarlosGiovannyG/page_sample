@@ -23,8 +23,30 @@ Scroll Bar ::-webkit-scrollbar-track {
   border-radius: 5px;
 }
 /* pagina detalle */
+.container-detail {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  margin: 1rem auto;
+}
+
+.title-detail {
+  width: 50%;
+  font-size: 2.5em;
+  color: #7e7b7b;
+  display: flex;
+  height: 3rem;
+  align-items: center;
+  justify-content: center;
+  -webkit-box-shadow: 0 4px 6px -6px #222;
+  -moz-box-shadow: 0 4px 6px -6px #222;
+  box-shadow: 0 4px 6px -6px #222;
+}
+
 .detail {
-  width: 80%;
+  width: 90%;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -50,7 +72,7 @@ Scroll Bar ::-webkit-scrollbar-track {
   margin: 0 auto;
 }
 .detail-title > span {
-  font-size: 20px;
+  font-size: 2rem;
   color: black;
   font-weight: 600;
 }
@@ -89,6 +111,11 @@ Scroll Bar ::-webkit-scrollbar-track {
   color: #000000;
 }
 
+.container-data > span {
+  color: #000000;
+  font-size: 20px;
+}
+
 .container-data-comment {
   width: 100%;
   display: flex;
@@ -100,6 +127,16 @@ Scroll Bar ::-webkit-scrollbar-track {
   -webkit-box-shadow: 0 4px 16px -6px #222;
   -moz-box-shadow: 0 4px 16px -6px #222;
   box-shadow: 0 4px 16px -6px #222;
+}
+
+.container-data-comment > span {
+  width: 100%;
+  margin: 0 auto;
+  text-align: justify;
+  padding: 0.2rem;
+  -webkit-box-shadow: 0 2px 14px -4px #222;
+  -moz-box-shadow: 0 2px 14px -4px #222;
+  box-shadow: 0 2px 14px -4px #222;
 }
 
 /* estilos miga de pan  */
@@ -255,7 +292,7 @@ ol {
 /* Componente search */
 .search-home {
   display: flex;
-  width: 35%;
+  width: 45%;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -295,14 +332,13 @@ ol {
 }
 
 .container-buttons {
-  width: 19rem;
+  width: 40%;
   height: 3rem;
   margin: 0.2rem auto;
   display: flex;
   align-items: center;
   justify-content: space-around;
-  gap: .5rem;
-  padding-inline: 1.5rem;
+  padding-inline: 0.5rem;
   border-radius: 0.8rem;
   background-color: rgba(90, 88, 88, 0.911);
 }
@@ -322,8 +358,8 @@ ol {
   height: 2rem;
   display: flex;
   align-items: center;
-  justify-content:center;
-  padding: 0.2rem 1rem;
+  justify-content: center;
+  padding: 0.1rem 0.5rem;
   border-radius: 0.4rem;
   border: 1px solid rgb(120, 121, 121);
   background: rgba(212, 211, 211, 0.349);
@@ -370,17 +406,16 @@ ol {
 }
 
 .container-select {
-  width: 100%;
+  width: 90%;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 0.2rem;
-  gap: 0.4rem;
 }
 .formSearch {
   display: flex;
-  width: 100%;
-  padding: 0.5rem 1.5rem;
+  width: 90%;
+  padding: 0.5rem 0.5rem;
   align-items: center;
   justify-content: center;
 }
@@ -389,22 +424,12 @@ ol {
   width: 100%;
   height: 3rem;
   font-size: 18px;
-  border-bottom-left-radius: 10px;
-  border-top-left-radius: 10px;
+  border-radius: 10px;
   padding: 0.5rem 0.9rem;
   border: 1px solid rgb(120, 121, 121);
 }
 .inputSearch:hover {
   border: 1px solid rgb(175, 12, 47);
-}
-
-.btnSearch {
-  border: none;
-  background-color: red;
-  height: 3rem;
-  width: 5rem;
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
 }
 
 .banner {
@@ -414,7 +439,7 @@ ol {
   justify-content: center;
   word-wrap: break-word;
   width: 97%;
-  margin: 1rem auto .5rem auto;
+  margin: 1rem auto 0.5rem auto;
   min-height: 50vh;
   background-image: url("../public/images/banner.png");
   background-position: center;
@@ -557,7 +582,7 @@ ol {
   width: 70%;
   height: 2rem;
   margin: 0.4rem auto;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: bold;
   text-align: center;
   color: black;
@@ -566,9 +591,9 @@ ol {
 }
 
 @media (max-width: 768px) {
-
   .container-select {
-   flex-direction: column;
+    width: 100%;
+    flex-direction: column;
     padding-inline: 0.3rem;
     gap: 0.3rem;
   }
@@ -580,13 +605,13 @@ ol {
     padding: 0.1rem 0.5rem;
   }
 
-  /* .container-buttons {
-    width: 100%;
+  .container-buttons {
+    width: 90%;
     height: 3rem;
-    margin: 0.2rem auto;
-    gap: 0.5rem;
+    margin: 0.1rem auto;
+    gap: 0.1rem;
     padding-inline: 0.5rem;
-  } */
+  }
 
   .formSearch {
     padding: 0.2rem 0.1rem;
@@ -595,11 +620,6 @@ ol {
   .inputSearch {
     height: 2.5rem;
     font-size: 16px;
-  }
-
-  .btnSearch {
-    height: 2.5rem;
-    width: 3.5rem;
   }
 
   .banner {
@@ -654,35 +674,102 @@ ol {
   }
   .container-paginator {
     width: 100%;
+    margin-top: 1.5rem;
   }
   .paginator {
     width: 100%;
     height: 90%;
   }
   .buttonNext,
-.buttonPrev {
-  width: 8rem;
-  height: 2rem;
-  padding: .2rem;
-  margin: auto 1rem;
-}
+  .buttonPrev {
+    width: 8rem;
+    height: 2rem;
+    padding: 0.2rem;
+    margin: auto 1rem;
+  }
 
-.number-page {
-  width: 10rem;
-  height: 2rem;
-  font-size: 1.1em;
-}
+  .number-page {
+    width: 10rem;
+    height: 2rem;
+    font-size: 1.1em;
+  }
 
-.container-bread {
-  width: 95%;
-  padding: 0.4rem;
-}
+  .container-bread {
+    width: 100%;
+    padding: 0.1rem;
+  }
 
-.item-bread {
-  font-size: 14px;
-}
-.item-bread-active {
-  font-size: 14px;
-  margin-left: 0.2rem;
-}
+  .item-bread {
+    font-size: 12px;
+    text-decoration: overline;
+  }
+  .item-bread-active {
+    font-size: 12px;
+    margin-left: 0.2rem;
+  }
+
+  .container-detail {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    margin: 1rem auto;
+  }
+
+  .title-detail {
+    width: 90%;
+    font-size: 1.2em;
+    margin-top: .1rem;
+  }
+
+  .detail {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0.2rem;
+  }
+
+  .detail-container {
+    width: 100%;
+    height: max-content;
+  }
+
+  .detail-title {
+    width: 90%;
+  }
+  .detail-title > span {
+    font-size: 1rem;
+  }
+
+  .detail-image {
+    width: 100%;
+    margin: 0.5rem auto;
+    overflow-x: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: grab;
+    height: 15rem;
+  }
+
+  .container-data {
+    grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+    width: 100%;
+    gap: 0.6rem;
+    padding: 0.5rem;
+  }
+
+  .container-data-item {
+    width: 100%;
+    height: 2.5rem;
+    padding-left: 0.1rem;
+  }
+
+  .container-data > span {
+    color: #000000;
+    font-size: 12px;
+  }
+  .container-data-comment > span {
+    padding: 0.4rem;
+  }
 }

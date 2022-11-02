@@ -8,10 +8,11 @@ import { wrapper } from "../../redux/store";
 
 const Apartamentos = () => {
   const { loading, data } = useSelector((state) => state.apartmentProperties);
-  const { isSearch } = useSearch();
+  const { submitHandler,categorySearch, inputSearch} = useSearch();
+  const dataShow = submitHandler(data,categorySearch,inputSearch);
   return (
     <Layout>
-      <Apartments title='Apartamentos' data={data} loading={loading} />
+      <Apartments title='Apartamentos' data={dataShow} loading={loading} />
     </Layout>
   );
 };

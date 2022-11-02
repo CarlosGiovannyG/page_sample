@@ -1,20 +1,25 @@
-import React, { useState } from "react";
+import React from "react";
 import { FaSearch } from "react-icons/fa";
 import { useSearch } from "../context";
 
-const Search = ({ className, position }) => {
+const Search = ({ className }) => {
+  
+
   const {
     typeSearch,
     setCategorySearch,
-    citySearch,
-    setCitySearch,
     motive,
     typeProperty,
     motiveHandler,
     typePropertyHandler,
     submitHandler,
-    typeSearchHandler
+    categorySearch,
+    typeSearchHandler,
+    setInputSearch,
+    inputSearch
   } = useSearch();
+
+
   return (
     <div className={`${className}`}>
       <div className="container-select">
@@ -65,12 +70,12 @@ const Search = ({ className, position }) => {
             ))}
           </select>
         </div>
-        <div className="container-buttons">
+        {/* <div className="container-buttons">
           <label htmlFor="room_type_field">Buscar por:</label>
           <select
             className="button-search"
             id="room_type_field"
-            value={motive}
+            value={categorySearch}
             onChange={(e) => setCategorySearch(e.target.value)}
           >
             {["","Ciudad", "Código Postal", "Condado"].map((type) => (
@@ -79,24 +84,20 @@ const Search = ({ className, position }) => {
               </option>
             ))}
           </select>
-        </div>
+        </div> */}
+        
       </div>
       <form className="formSearch col-12">
         <input
           className="inputSearch"
           type="text"
-          name="search"
-          onChange={(e) => setCitySearch(e.target.value)}
-          value={citySearch}
-          placeholder="Selecciona una opción y has tu búsqueda"
+          id="search"
+          onKeyPress={(e) => { e.key === 'Enter' && e.preventDefault(); }}
+          onChange={(e) => setInputSearch(e.target.value)}
+          value={inputSearch}
+          placeholder="Busca por ciudad, código postal o condado"
         />
-        <button
-          onClick={submitHandler}
-          type="submit"
-          className="btnSearch text-white"
-        >
-          <FaSearch size={25} />
-        </button>
+       
       </form>
       <div className="row wrapper"></div>
     </div>

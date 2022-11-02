@@ -4,7 +4,7 @@ import Paginator from './Paginator'
 
 const Cards = ({ title, data }) => {
   const [currentPage, setCurrentPage] = useState(1)
-  const [itemsPerPage] = useState(4)
+  const [itemsPerPage] = useState(8)
 
   const handlePaged = (e) => {
     if (e.target.id === 'back') {

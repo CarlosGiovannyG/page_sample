@@ -3,14 +3,18 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { Layout } from "../../components";
 import { Houses } from "../../components";
+import { useSearch } from "../../context";
 import { houseProperties } from "../../redux/actions";
 import { wrapper } from "../../redux/store";
 
 const House = () => {
   const { loading, data } = useSelector((state) => state.houseProperties);
+  const { submitHandler} = useSearch();
+  const dataShow = submitHandler(data);
+
   return (
     <Layout>
-      <Houses title='Casas'   data={data} loading={loading} />
+      <Houses title="Casas" data={dataShow} loading={loading} />
     </Layout>
   );
 };

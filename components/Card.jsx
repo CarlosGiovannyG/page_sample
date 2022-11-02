@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
 import { useSearch } from "../context";
@@ -22,6 +21,7 @@ const Card = ({ dato }) => {
             alt="imagen"
           />
           <div className="card-title">{dato.name}</div>
+          <div className="card-title">{dato.city}</div>
         </div>
       ) : null}
     </>

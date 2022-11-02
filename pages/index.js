@@ -7,12 +7,13 @@ import { wrapper } from "../redux/store";
 
 export default function Index() {
   const { loading, data } = useSelector((state) => state.featuredProperties);
-  const { isSearch } = useSearch();
+  const { submitHandler,categorySearch, inputSearch} = useSearch();
+  const dataShow = submitHandler(data,categorySearch,inputSearch);
 
  
   return (
     <Layout>
-      <Home title="Propiedades destacadas" data={data} loading={loading} />
+      <Home title="Propiedades destacadas" data={dataShow} loading={loading} />
     </Layout>
   );
 }

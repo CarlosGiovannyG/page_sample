@@ -6,17 +6,22 @@ export const SearchContext = createContext();
 const SearchProvider = ({ children }) => {
   const router = useRouter();
   const [isLocation, setIsLocation] = useState("");
-  const [location, setLocation] = useState("");
   const [typeSearch, setTypeSearch] = useState("");
   const [typeProperty, setTypeProperty] = useState("");
   const [motive, setMotive] = useState("");
-  const [categorySearch, setCategorySearch] = useState("Ciudad");
-  const [citySearch, setCitySearch] = useState("Miami");
-  const [isSearch, setIsSearch] = useState(false);
-  const [coordenadas, setCoordenadas] = useState([])
+  const [categorySearch, setCategorySearch] = useState("");
+  const [inputSearch, setInputSearch] = useState("");
+  const [coordenadas, setCoordenadas] = useState([]);
   const { asPath } = router;
 
   useEffect(() => {
+    if (asPath === "/") {
+      setTypeProperty("");
+      setMotive("");
+      setTypeSearch("");
+      setCategorySearch('')
+      setInputSearch('')
+    }
     setIsLocation(asPath);
   }, [asPath]);
 
@@ -37,8 +42,8 @@ const SearchProvider = ({ children }) => {
   const typeSearchHandler = (value) => {
     setTypeSearch(value);
     if (!typeProperty || motive) {
-      router.push(`/casas/comprar/${value.toLowerCase()}`)
-      return
+      router.push(`/casas/comprar/${value.toLowerCase()}`);
+      return;
     } else {
       router.push(
         `/${typeProperty.toLowerCase()}/${motive.toLowerCase()}/${value.toLowerCase()}`
@@ -46,22 +51,30 @@ const SearchProvider = ({ children }) => {
     }
   };
 
-  const submitHandler = (e) => {
-    e.preventDefault();
-    setIsSearch(true);
-    setTimeout(() => {
-      setIsSearch(false);
-    }, 5000);
+  const submitHandler = (data) => {
+    let result = [];
+    if (!data?.length || !inputSearch) {
+      result = data;
+    }else{
+      result = data.filter(
+        (dato) =>
+          dato.city.toLowerCase().replace(/\s+/g, "") ===
+          inputSearch.toLowerCase().replace(/\s+/g, "") ||
+          dato.postalCode === Number(inputSearch) ||
+          dato.geo_county.toLowerCase().replace(/\s+/g, "") ===
+          inputSearch.toLowerCase().replace(/\s+/g, "")
+      );
+
+    }
+    return result;
   };
 
   const contextValue = {
     typeSearch,
     setCategorySearch,
     categorySearch,
-    citySearch,
     setTypeSearch,
     submitHandler,
-    setCitySearch,
     isLocation,
     motive,
     typeProperty,
@@ -69,10 +82,11 @@ const SearchProvider = ({ children }) => {
     typePropertyHandler,
     motiveHandler,
     typeSearchHandler,
-    isSearch,
-    setIsSearch,
     coordenadas,
-    setCoordenadas
+    setCoordenadas,
+    setInputSearch,
+    inputSearch,
+    submitHandler,
   };
 
   return (
